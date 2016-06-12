@@ -9,6 +9,8 @@
 #
 # MESSAGES TUTORIAL
 #
+# prefix: THE SERVER'S NAME/PREFIX
+#
 # saved-kit: WHEN PLAYER SAVES THE DEFAULT KIT.
 # statsgui-title: THE STATS GUI TITLE - %player% = Player's name.
 # player-hasnt-played: MESSAGE WHEN A PLAYER HAS NOT PLAYED.
@@ -25,6 +27,8 @@
 # player-death: WHEN A PLAYER KILLS ANOTHER PLAYER - %killer% = Killer's name && %victim% = Victim's name.
 # total-left: TOTAL NUMBER OF PLAYERS LEFT - %now% = Players left && %total% = Starting amount.
 # currently-grace: WHEN A PLAYER ATTACKS SOMEONE IN GRACE PERIOD.
+
+prefix: '&cServer &7>>'
 
 saved-kit: '&7You have saved the kit.'
 statsgui-title: '&6&l%player% &e- &1Statistics'
