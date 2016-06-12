@@ -12,7 +12,6 @@
 # prefix: THE SERVER'S NAME/PREFIX
 #
 # saved-kit: WHEN PLAYER SAVES THE DEFAULT KIT.
-# statsgui-title: THE STATS GUI TITLE - %player% = Player's name.
 # player-hasnt-played: MESSAGE WHEN A PLAYER HAS NOT PLAYED.
 # player-not-exist: PLAYER DOES NOT EXIST/HASN OT JOINED SERVER.
 # enderpearl-cooldown-msg: ENDERPEARL COOLDOWN MESSAGE - %time% = Time left.
@@ -31,7 +30,6 @@
 prefix: '&cServer &7>>'
 
 saved-kit: '&7You have saved the kit.'
-statsgui-title: '&6&l%player% &e- &1Statistics'
 player-hasnt-played: '&cThis player has not played a game of UHG.'
 player-not-exist: '&cThis player does not exist or has not been on this server.'
 enderpearl-cooldown-msg: '&cYou must wait &7%time% &cto use your &3enderpearl.'
