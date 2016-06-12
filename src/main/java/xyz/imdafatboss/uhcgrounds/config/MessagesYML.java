@@ -7,7 +7,7 @@ public class MessagesYML {
 
     public enum Language{
 
-        PREFIX, SAVED_KIT, STATS_GUI_TITLE, HASNT_PLAYED, DOESNT_EXIST, ENDERPEARL_CD, ALREADY_INGAME, KICKED,
+        PREFIX, SAVED_KIT, HASNT_PLAYED, DOESNT_EXIST, ENDERPEARL_CD, ALREADY_INGAME, KICKED,
         JOINED_LOBBY, SET_LOBBY, GAME_STARTED, SET_SPAWN, YOU_WON, PLAYER_LEFT, PLAYER_DIED, TOTAL_LEFT, GRACE
 
     }
@@ -36,10 +36,6 @@ public class MessagesYML {
             case SAVED_KIT:
 
                 return Msg.translate(cfg.get().getString("saved-kit"));
-
-            case STATS_GUI_TITLE:
-
-                return Msg.translate(cfg.get().getString("statsgui-title"));
 
             case HASNT_PLAYED:
 
