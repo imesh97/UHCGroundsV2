@@ -8,7 +8,7 @@ public class ConfigYML {
 
     public enum Value{
 
-        MAX_PLAYERS, MIN_PLAYERS, SCATTER_RADIUS, SCATTER_DISTANCE, WIN_COMMANDS, REGEN, GRACE
+        MAX_PLAYERS, MIN_PLAYERS, SCATTER_RADIUS, SCATTER_DISTANCE, WIN_COMMANDS, REGEN, GRACE, ENDERPEARL
 
     }
 
@@ -49,6 +49,10 @@ public class ConfigYML {
                 case GRACE:
 
                     return cfg.get().getInt("grace");
+
+                case ENDERPEARL:
+
+                    return cfg.get().getInt("enderpearl-sec");
 
                 default:
 

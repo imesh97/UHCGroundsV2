@@ -7,6 +7,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import xyz.imdafatboss.uhcgrounds.Home;
+import xyz.imdafatboss.uhcgrounds.config.DataYML;
 import xyz.imdafatboss.uhcgrounds.config.StatsGuiYML;
 import xyz.imdafatboss.uhcgrounds.utils.Msg;
 
@@ -129,6 +130,127 @@ public class StatsGUI {
     public Inventory statsGUI(Player p){
 
         Inventory inv = Bukkit.createInventory(null, 27, getTitle());
+
+        // Kills
+        List<String> killLore = new ArrayList<String>();
+        for(String s : getKillsItem().getItemMeta().getLore()){
+
+            int kills = new DataYML(plugin, p).getKills();
+            String ss = s.replaceAll("%kills%", kills + "");
+
+            killLore.add(ss);
+
+        }
+        ItemStack oldKill = getKillsItem();
+        ItemMeta kMeta = oldKill.getItemMeta();
+        kMeta.setLore(killLore);
+        oldKill.setItemMeta(kMeta);
+
+        inv.setItem(getKillsSlot(), oldKill);
+
+        // Wins
+        List<String> winLore = new ArrayList<String>();
+        for(String s : getWinsItem().getItemMeta().getLore()){
+
+            int wins = new DataYML(plugin, p).getWins();
+            String ss = s.replaceAll("%wins%", wins + "");
+
+            winLore.add(ss);
+
+        }
+        ItemStack oldWin = getWinsItem();
+        ItemMeta wMeta = oldWin.getItemMeta();
+        wMeta.setLore(winLore);
+        oldWin.setItemMeta(wMeta);
+
+        inv.setItem(getWinsSlot(), oldWin);
+
+        // Deaths
+        List<String> deathLore = new ArrayList<String>();
+        for(String s : getDeathsItem().getItemMeta().getLore()){
+
+            int deaths = new DataYML(plugin, p).getDeaths();
+            String ss = s.replaceAll("%deaths%", deaths + "");
+
+            deathLore.add(ss);
+
+        }
+        ItemStack oldDeath = getDeathsItem();
+        ItemMeta dMeta = oldDeath.getItemMeta();
+        dMeta.setLore(deathLore);
+        oldDeath.setItemMeta(dMeta);
+
+        inv.setItem(getDeathsSlot(), oldDeath);
+
+        // Create the empty slots.
+        for(int i = 0; i < inv.getSize(); i++){
+
+            if(inv.getItem(i) == null || inv.getItem(i).getType() == Material.AIR){
+
+                inv.setItem(i, emptyItem());
+
+            }
+
+        }
+
+        return inv;
+
+    }
+
+    public Inventory offlineStatsGUI(String u){
+
+        Inventory inv = Bukkit.createInventory(null, 27, getTitle());
+
+        // Kills
+        List<String> killLore = new ArrayList<String>();
+        for(String s : getKillsItem().getItemMeta().getLore()){
+
+            int kills = new DataYML(plugin, u).getKills();
+            String ss = s.replaceAll("%kills%", kills + "");
+
+            killLore.add(ss);
+
+        }
+        ItemStack oldKill = getKillsItem();
+        ItemMeta kMeta = oldKill.getItemMeta();
+        kMeta.setLore(killLore);
+        oldKill.setItemMeta(kMeta);
+
+        inv.setItem(getKillsSlot(), oldKill);
+
+        // Wins
+        List<String> winLore = new ArrayList<String>();
+        for(String s : getWinsItem().getItemMeta().getLore()){
+
+            int wins = new DataYML(plugin, u).getWins();
+            String ss = s.replaceAll("%wins%", wins + "");
+
+            winLore.add(ss);
+
+        }
+        ItemStack oldWin = getWinsItem();
+        ItemMeta wMeta = oldWin.getItemMeta();
+        wMeta.setLore(winLore);
+        oldWin.setItemMeta(wMeta);
+
+        inv.setItem(getWinsSlot(), oldWin);
+
+        // Deaths
+        List<String> deathLore = new ArrayList<String>();
+        for(String s : getDeathsItem().getItemMeta().getLore()){
+
+            int deaths = new DataYML(plugin, u).getDeaths();
+            String ss = s.replaceAll("%deaths%", deaths + "");
+
+            deathLore.add(ss);
+
+        }
+        ItemStack oldDeath = getDeathsItem();
+        ItemMeta dMeta = oldDeath.getItemMeta();
+        dMeta.setLore(deathLore);
+        oldDeath.setItemMeta(dMeta);
+
+        inv.setItem(getDeathsSlot(), oldDeath);
 
         // Create the empty slots.
         for(int i = 0; i < inv.getSize(); i++){

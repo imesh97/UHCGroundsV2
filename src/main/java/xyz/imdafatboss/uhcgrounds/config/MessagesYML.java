@@ -15,7 +15,7 @@ public class MessagesYML {
     Language language;
 
     Home plugin;
-    public MessagesYML(Language l, Home instance){
+    public MessagesYML(Home instance, Language l){
 
         this.plugin = instance;
         this.language = l;

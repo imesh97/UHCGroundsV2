@@ -34,6 +34,8 @@
 #
 # grace: 60 THE NUMBER OF SECONDS IN THE GRACE PERIOD
 #
+# enderpearl-sec: ENDER PEARL COOLDOWN (SECONDS)
+#
 
 max-players: 12
 
@@ -50,3 +52,5 @@ win-commands:
 regen: false
 
 grace: 60
+
+enderpearl-sec: 15

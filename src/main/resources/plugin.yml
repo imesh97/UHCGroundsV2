@@ -1,0 +1,9 @@
+name: UHCGrounds
+main: xyz.imdafatboss.uhcgrounds.Home
+version: 1.0
+author: imdafatboss
+description: UHCGrounds minigame
+
+commands:
+    stats:
+        description: Check the stats of yourself or another player
